@@ -261,7 +261,8 @@ function LimitationsSection() {
             </div>
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#hazard" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-primary-foreground shadow-subtle transition-smooth hover:-translate-y-0.5 hover:brightness-110">Revisit the PSHA map <ArrowRight className="h-4 w-4" /></a>
+            <a href={`${import.meta.env.BASE_URL}assets/paper/seismic-final.pdf`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-primary-foreground shadow-subtle transition-smooth hover:-translate-y-0.5 hover:brightness-110">Read the full paper <ArrowRight className="h-4 w-4" /></a>
+            <a href="#hazard" className="inline-flex items-center gap-2 rounded-md border border-border bg-muted px-6 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-foreground transition-smooth hover:-translate-y-0.5 hover:border-primary/50">Revisit the PSHA map <ArrowRight className="h-4 w-4" /></a>
           </div>
         </div>
       </div>
