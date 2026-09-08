@@ -63,34 +63,27 @@ function formatValue(n: number): string {
 
 function StudyHero() {
   return (
-    <section
-      data-ocid="study.hero"
-      className="relative overflow-hidden border-b border-border"
-    >
+    <section className="relative overflow-hidden border-b border-border">
       <div className="absolute inset-0 bg-gradient-subtle" aria-hidden="true" />
       <div className="container relative py-20 md:py-28">
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs font-semibold uppercase tracking-widest text-primary">
-          <span
-            className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-soft"
-            aria-hidden="true"
-          />
-          The Study
+        <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+          Study 01 · Energy Systems
         </p>
-        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[1.05] tracking-tight text-foreground md:text-7xl">
-          The Importance of{" "}
-          <span className="text-gradient-primary">Being Nuclear</span>
+        <h1 className="max-w-4xl font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground md:text-6xl">
+          A Quantitative Assessment of{" "}
+          <span className="text-gradient-blue">Lebanon’s Energy Crisis</span>
         </h1>
         <p className="mt-6 max-w-3xl text-base text-muted-foreground md:text-lg">
           Since the 2019 crisis, Lebanon has faced a severe electricity crisis
-          that has slowed the country's development and worsened its economic
+          that has slowed the country&apos;s development and worsened its economic
           situation. This study investigates whether nuclear energy could
-          theoretically resolve Lebanon's electricity crisis and meet national
+          theoretically resolve Lebanon&apos;s electricity crisis and meet national
           demand. In this paper, the amount of fuel needed to meet the demand
           was calculated, along with the CO₂ emissions, since environmental
           impact is an important factor. The land area required was also
           considered, because Lebanon is a small and densely populated country.
           In addition, an LCOE analysis was carried out to evaluate the economic
-          side, especially since the crisis has already affected the country's
+          side, especially since the crisis has already affected the country&apos;s
           economy. A safety comparison based on death rates was also included.
         </p>
         <div className="mt-8 flex flex-wrap gap-2">
@@ -99,10 +92,7 @@ function StudyHero() {
               key={source.id}
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs font-semibold uppercase tracking-widest text-foreground"
             >
-              <span
-                className={`h-2 w-2 rounded-full ${source.dotClass}`}
-                aria-hidden="true"
-              />
+              <span className={`h-2 w-2 rounded-full ${source.dotClass}`} aria-hidden="true" />
               {source.shortName}
             </span>
           ))}
@@ -111,7 +101,6 @@ function StudyHero() {
     </section>
   );
 }
-
 function SocioEconomicSection() {
   return (
     <section
