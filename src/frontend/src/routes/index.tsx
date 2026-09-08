@@ -115,13 +115,18 @@ function StudyExplorer() {
     >
       <div className="absolute inset-0 bg-grid opacity-40" aria-hidden="true" />
       <div className="container relative">
-        <div className="mb-10">
-          <p className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
-            Explore the research
+        <div className="mb-10 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+              The Papers
+            </p>
+            <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+              Two studies, one question
+            </h2>
+          </div>
+          <p className="max-w-md text-sm text-muted-foreground md:text-base">
+            Each paper in the series is an explorable, interactive study — from Lebanon&apos;s energy crisis to seismic safety on its coast.
           </p>
-          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-            Choose a paper
-          </h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
