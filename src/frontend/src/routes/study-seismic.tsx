@@ -1,4 +1,4 @@
-import { createRoute } from "@tanstack/react-router";
+import { createRoute, Link } from "@tanstack/react-router";
 import { Activity, ArrowRight, Building2, Gauge, Map } from "lucide-react";
 import { useState } from "react";
 import { RootRoute } from "./__root";
@@ -271,7 +271,36 @@ function LimitationsSection() {
 }
 
 function StudySeismicPage() {
-  return <><StudyHero /><QuestionsSection /><MethodSection /><HazardSection /><IsolationSection /><LimitationsSection /></>;
+  return (
+    <div className="fixed inset-0 z-[9999] h-screen overflow-y-auto bg-background text-foreground">
+      <header
+        className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-md"
+      >
+        <div className="container flex h-16 items-center justify-between">
+          <Link
+            to="/"
+            className="font-display text-xl font-bold tracking-tight text-foreground"
+          >
+            The Importance of Being Nuclear
+          </Link>
+          <nav
+            aria-label="Main navigation"
+            className="hidden gap-6 font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground md:flex"
+          >
+            <Link to="/" className="transition-smooth hover:text-primary">Home</Link>
+            <Link to="/study" className="transition-smooth hover:text-primary">Energy Systems</Link>
+            <Link to="/study/seismic" className="transition-smooth hover:text-primary">Seismic Engineering</Link>
+          </nav>
+        </div>
+      </header>
+      <StudyHero />
+      <QuestionsSection />
+      <MethodSection />
+      <HazardSection />
+      <IsolationSection />
+      <LimitationsSection />
+    </div>
+  );
 }
 
 export const StudySeismicRoute = createRoute({ getParentRoute: () => RootRoute, path: "/study/seismic", component: StudySeismicPage });
