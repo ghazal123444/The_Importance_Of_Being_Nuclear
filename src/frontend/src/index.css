@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Fraunces", serif;
+    --font-body: "General Sans", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --radius: 0.5rem;
+
+    --background: 0.13 0.015 255;
+    --study-card: 0.18 0.02 255;
+    --study-card-hover: 0.21 0.022 255;
+    --study-border: 0.3 0.025 255;
+    --study-accent-1: 0.75 0.15 70;
+    --study-accent-2: 0.62 0.2 35;
+    --foreground: 0.93 0.01 255;
+    --card: 0.165 0.02 255;
+    --card-foreground: 0.93 0.01 255;
+    --popover: 0.18 0.02 255;
+    --popover-foreground: 0.93 0.01 255;
+
+    --primary: 0.75 0.15 70;
+    --primary-foreground: 0.13 0.015 70;
+
+    --secondary: 0.21 0.02 255;
+    --secondary-foreground: 0.85 0.01 255;
+    --muted: 0.21 0.02 255;
+    --muted-foreground: 0.55 0.01 255;
+
+    --accent: 0.7 0.12 185;
+    --accent-foreground: 0.13 0.015 185;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.93 0.01 25;
+
+    --success: 0.6 0.16 150;
+    --warning: 0.72 0.15 85;
+
+    --border: 0.26 0.02 255;
+    --input: 0.26 0.02 255;
+    --ring: 0.75 0.15 70;
+
+    --chart-1: 0.75 0.15 70; /* nuclear - amber */
+    --chart-2: 0.55 0.05 40; /* coal - warm grey */
+    --chart-3: 0.65 0.18 45; /* diesel - orange */
+    --chart-4: 0.85 0.15 95; /* solar - yellow */
+    --chart-5: 0.7 0.12 185; /* wind - teal */
+    --chart-6: 0.5 0.14 255; /* wind-offshore - dark blue */
+
+    /* seismic / ground-motion hazard intensity ramp (low -> extreme) */
+    --seismic-1: 0.72 0.11 185; /* low - calm teal */
+    --seismic-2: 0.78 0.13 95; /* moderate - yellow */
+    --seismic-3: 0.7 0.16 60; /* high - amber */
+    --seismic-4: 0.62 0.2 35; /* very high - orange */
+    --seismic-5: 0.54 0.22 20; /* extreme - hot red */
+
+    --gradient-seismic: linear-gradient(
+      135deg,
+      oklch(0.62 0.2 35),
+      oklch(0.78 0.13 95)
+    );
+
+    --sidebar: 0.165 0.02 255;
+    --sidebar-foreground: 0.93 0.01 255;
+    --sidebar-primary: 0.75 0.15 70;
+    --sidebar-primary-foreground: 0.13 0.015 70;
+    --sidebar-accent: 0.21 0.02 255;
+    --sidebar-accent-foreground: 0.85 0.01 255;
+    --sidebar-border: 0.26 0.02 255;
+    --sidebar-ring: 0.75 0.15 70;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.75 0.15 70),
+      oklch(0.68 0.12 185)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.17 0.02 255),
+      oklch(0.13 0.015 255)
+    );
+  }
+
+  .dark {
+    --background: 0.13 0.015 255;
+    --study-card: 0.18 0.02 255;
+    --study-card-hover: 0.21 0.022 255;
+    --study-border: 0.3 0.025 255;
+    --study-accent-1: 0.75 0.15 70;
+    --study-accent-2: 0.62 0.2 35;
+    --foreground: 0.93 0.01 255;
+    --card: 0.165 0.02 255;
+    --card-foreground: 0.93 0.01 255;
+    --popover: 0.18 0.02 255;
+    --popover-foreground: 0.93 0.01 255;
+
+    --primary: 0.75 0.15 70;
+    --primary-foreground: 0.13 0.015 70;
+
+    --secondary: 0.21 0.02 255;
+    --secondary-foreground: 0.85 0.01 255;
+    --muted: 0.21 0.02 255;
+    --muted-foreground: 0.55 0.01 255;
+
+    --accent: 0.7 0.12 185;
+    --accent-foreground: 0.13 0.015 185;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.93 0.01 25;
+
+    --success: 0.6 0.16 150;
+    --warning: 0.72 0.15 85;
+
+    --border: 0.26 0.02 255;
+    --input: 0.26 0.02 255;
+    --ring: 0.75 0.15 70;
+
+    --chart-1: 0.75 0.15 70; /* nuclear - amber */
+    --chart-2: 0.55 0.05 40; /* coal - warm grey */
+    --chart-3: 0.65 0.18 45; /* diesel - orange */
+    --chart-4: 0.85 0.15 95; /* solar - yellow */
+    --chart-5: 0.7 0.12 185; /* wind - teal */
+    --chart-6: 0.5 0.14 255; /* wind-offshore - dark blue */
+
+    /* seismic / ground-motion hazard intensity ramp (low -> extreme) */
+    --seismic-1: 0.72 0.11 185; /* low - calm teal */
+    --seismic-2: 0.78 0.13 95; /* moderate - yellow */
+    --seismic-3: 0.7 0.16 60; /* high - amber */
+    --seismic-4: 0.62 0.2 35; /* very high - orange */
+    --seismic-5: 0.54 0.22 20; /* extreme - hot red */
+
+    --gradient-seismic: linear-gradient(
+      135deg,
+      oklch(0.62 0.2 35),
+      oklch(0.78 0.13 95)
+    );
+
+    --sidebar: 0.165 0.02 255;
+    --sidebar-foreground: 0.93 0.01 255;
+    --sidebar-primary: 0.75 0.15 70;
+    --sidebar-primary-foreground: 0.13 0.015 70;
+    --sidebar-accent: 0.21 0.02 255;
+    --sidebar-accent-foreground: 0.85 0.01 255;
+    --sidebar-border: 0.26 0.02 255;
+    --sidebar-ring: 0.75 0.15 70;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.75 0.15 70),
+      oklch(0.68 0.12 185)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.17 0.02 255),
+      oklch(0.13 0.015 255)
+    );
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-subtle {
+    background-image: var(--gradient-subtle);
+  }
+
+  .text-gradient-primary {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-seismic {
+    background-image: var(--gradient-seismic);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-seismic {
+    background-image: var(--gradient-seismic);
+  }
+
+  /* two-card study explorer */
+  .study-card {
+    background-color: oklch(var(--study-card));
+    border: 1px solid oklch(var(--study-border));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .study-card:hover {
+    background-color: oklch(var(--study-card-hover));
+    border-color: oklch(var(--study-accent-1));
+    transform: translateY(-4px);
+  }
+
+  /* faint research-grid backdrop for the explorer section */
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        oklch(var(--border) / 0.35) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        oklch(var(--border) / 0.35) 1px,
+        transparent 1px
+      );
+    background-size: 3rem 3rem;
+  }
+}

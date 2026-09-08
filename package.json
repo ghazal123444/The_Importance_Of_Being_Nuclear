@@ -1,0 +1,11 @@
+{
+  "name": "the-importance-of-being-nuclear",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --dir src/frontend dev",
+    "build": "pnpm --dir src/frontend build",
+    "typecheck": "pnpm --dir src/frontend typecheck",
+    "test": "pnpm --dir src/frontend test"
+  }
+}
