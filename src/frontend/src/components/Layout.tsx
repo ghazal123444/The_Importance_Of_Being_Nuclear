@@ -28,7 +28,7 @@ export function Layout({ children }: { children: ReactNode }) {
             ))}
           </nav>
           <p className="font-mono text-xs text-muted-foreground">
-            © {new Date().getFullYear()}
+            © 2026
           </p>
         </div>
       </footer>
