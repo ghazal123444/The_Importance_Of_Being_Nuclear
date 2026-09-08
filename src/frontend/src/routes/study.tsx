@@ -986,7 +986,7 @@ function ConclusionSection() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="https://raw.githubusercontent.com/ghazal123444/the-importance-of-being-nuclear/main/src/frontend/public/assets/paper/importance-of-being-nuclear.pdf"
+              href={`${import.meta.env.BASE_URL}assets/paper/importance-of-being-nuclear.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               data-ocid="study.conclusion.paper"
