@@ -106,8 +106,8 @@ export const DIMENSIONS: DimensionMeta[] = [
     shortLabel: "Safety",
     description:
       "The relative safety profile of each technology, including accident and health risk.",
-    unit: "idx",
-    higherIsBetter: true,
+    unit: "deaths/yr",
+    higherIsBetter: false,
   },
 ];
 
@@ -141,9 +141,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Near-zero operational emissions; lifecycle footprint is minimal.",
       },
       land: {
-        value: 1,
+        value: 3.367,
         unit: "km²",
-        note: "Very compact footprint relative to output.",
+        note: "Land area calculated for a 1 GWe nuclear facility in the study.",
       },
       cost: {
         value: 4.15,
@@ -151,9 +151,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "High upfront infrastructure cost, but very low fuel and operating costs over a long lifetime.",
       },
       safety: {
-        value: 42,
-        unit: "idx",
-        note: "Safety concerns persist despite strong operational records.",
+        value: 0.249,
+        unit: "deaths/yr",
+        note: "Estimated deaths for 8.3 TWh/year at 0.03 deaths/TWh.",
       },
     },
   },
@@ -176,9 +176,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Very high fuel consumption; continuous coal supply needed.",
       },
       devices: {
-        value: 1,
-        unit: "plant",
-        note: "A single coal plant delivers 1 GWe.",
+        value: 2.23,
+        unit: "GWe installed",
+        note: "Installed coal capacity required to match 8.3 TWh/year.",
       },
       co2: {
         value: 9290000,
@@ -186,9 +186,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Highest lifecycle emissions of any source.",
       },
       land: {
-        value: 42,
+        value: 6.32205,
         unit: "km²",
-        note: "Moderate footprint plus mining land.",
+        note: "Land area calculated for equivalent annual output.",
       },
       cost: {
         value: 12.6,
@@ -196,9 +196,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Low capital but high ongoing fuel cost.",
       },
       safety: {
-        value: 62,
-        unit: "idx",
-        note: "Occupational and air-quality health risks.",
+        value: 204.346,
+        unit: "deaths/yr",
+        note: "Estimated deaths for 8.3 TWh/year at 24.62 deaths/TWh.",
       },
     },
   },
@@ -221,9 +221,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "High fuel consumption; expensive refined diesel.",
       },
       devices: {
-        value: 1,
-        unit: "plant",
-        note: "A genset farm delivers 1 GWe.",
+        value: 2.3687,
+        unit: "GWe installed",
+        note: "Installed diesel capacity required to match 8.3 TWh/year.",
       },
       co2: {
         value: 6190000,
@@ -231,9 +231,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Very high emissions per unit of power.",
       },
       land: {
-        value: 14,
+        value: 20.84,
         unit: "km²",
-        note: "Very small footprint per unit.",
+        note: "Land area calculated for equivalent annual output.",
       },
       cost: {
         value: 30.6,
@@ -241,9 +241,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "High fuel cost dominates the economics.",
       },
       safety: {
-        value: 56,
-        unit: "idx",
-        note: "Fuel handling and air-quality risks.",
+        value: 152.969,
+        unit: "deaths/yr",
+        note: "Estimated deaths for 8.3 TWh/year at 18.43 deaths/TWh.",
       },
     },
   },
@@ -276,7 +276,7 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Very low lifecycle emissions.",
       },
       land: {
-        value: 88,
+        value: 88.553574,
         unit: "km²",
         note: "Very high land footprint per unit of output.",
       },
@@ -286,9 +286,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Falling capital cost; storage adds expense.",
       },
       safety: {
-        value: 92,
-        unit: "idx",
-        note: "Very safe; minimal operational risk.",
+        value: 0.166,
+        unit: "deaths/yr",
+        note: "Estimated deaths for 8.3 TWh/year at 0.02 deaths/TWh.",
       },
     },
   },
@@ -321,7 +321,7 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Very low lifecycle emissions.",
       },
       land: {
-        value: 82,
+        value: 111.97,
         unit: "km²",
         note: "Very high land footprint per unit of output.",
       },
@@ -331,9 +331,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Low operating cost; moderate capital.",
       },
       safety: {
-        value: 94,
-        unit: "idx",
-        note: "Very safe; minimal operational risk.",
+        value: 0.332,
+        unit: "deaths/yr",
+        note: "Estimated deaths for 8.3 TWh/year at the combined wind rate of 0.04 deaths/TWh.",
       },
     },
   },
@@ -366,9 +366,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Very low lifecycle emissions.",
       },
       land: {
-        value: 60,
+        value: 258.73,
         unit: "km²",
-        note: "Marine footprint; no onshore land.",
+        note: "Offshore wind spacing area calculated for equivalent annual output.",
       },
       cost: {
         value: 10.5,
@@ -376,9 +376,9 @@ export const ENERGY_SOURCES: EnergySource[] = [
         note: "Higher capital cost than onshore wind.",
       },
       safety: {
-        value: 94,
-        unit: "idx",
-        note: "Very safe; minimal operational risk.",
+        value: 0.332,
+        unit: "deaths/yr",
+        note: "Estimated deaths for 8.3 TWh/year at the combined wind rate of 0.04 deaths/TWh.",
       },
     },
   },
