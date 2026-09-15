@@ -250,3 +250,85 @@
   background-clip: text;
   color: transparent;
 }
+
+/* Match the approved Death Rate preview without altering the rest of the study. */
+#death-rates {
+  display: none !important;
+}
+
+[data-ocid="study.compare.dimension.safety"] {
+  font-size: 0;
+}
+
+[data-ocid="study.compare.dimension.safety"]::after {
+  content: "Death Rate";
+  font-size: 0.75rem;
+}
+
+#methodology .grid > div:nth-child(2) .space-y-3 > div:last-child .font-mono {
+  font-size: 0;
+}
+
+#methodology .grid > div:nth-child(2) .space-y-3 > div:last-child .font-mono::after {
+  content: "Death Rate";
+  font-size: 0.75rem;
+}
+
+#methodology .grid > div:nth-child(2) .space-y-3 > div:last-child p.text-sm {
+  font-size: 0;
+}
+
+#methodology .grid > div:nth-child(2) .space-y-3 > div:last-child p.text-sm::after {
+  content: "Estimated deaths per year for each technology at the selected electricity output.";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#how-it-works .mt-10.grid > div:nth-child(2) > p:last-child {
+  font-size: 0;
+}
+
+#how-it-works .mt-10.grid > div:nth-child(2) > p:last-child::after {
+  content: "Fuel, device count, CO₂, land, cost, and death rate are shown side by side for all five technologies — with onshore and offshore wind combined into a single entry.";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#compare > .container > .mb-10 > p:last-child {
+  font-size: 0;
+}
+
+#compare > .container > .mb-10 > p:last-child::after {
+  content: "Choose a reactor capacity and watch how each technology's footprint scales across fuel, devices, CO₂, land, cost, and death rate.";
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#compare [data-ocid="study.compare.tool"]:has([data-ocid="study.compare.dimension.safety"][aria-pressed="true"]) .mt-8.border-t.border-border.pt-6 > .mb-4 h3 {
+  font-size: 0;
+}
+
+#compare [data-ocid="study.compare.tool"]:has([data-ocid="study.compare.dimension.safety"][aria-pressed="true"]) .mt-8.border-t.border-border.pt-6 > .mb-4 h3::after {
+  content: "Death Rate";
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#compare [data-ocid="study.compare.tool"]:has([data-ocid="study.compare.dimension.safety"][aria-pressed="true"]) .mt-8.border-t.border-border.pt-6 > p.mb-6 {
+  font-size: 0;
+}
+
+#compare [data-ocid="study.compare.tool"]:has([data-ocid="study.compare.dimension.safety"][aria-pressed="true"]) .mt-8.border-t.border-border.pt-6 > p.mb-6::after {
+  content: "Estimated deaths per year for each technology at the selected electricity output.";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#nuclear-waste > .container > .mb-10 > p:first-child {
+  font-size: 0;
+}
+
+#nuclear-waste > .container > .mb-10 > p:first-child::after {
+  content: "06 · Nuclear Waste";
+  font-size: 0.75rem;
+}
