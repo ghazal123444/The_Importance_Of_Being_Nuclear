@@ -14,5 +14,43 @@
   <body>
     <div id="root"></div>
     <script type="module" src="./src/main.tsx"></script>
+    <script>
+      (() => {
+        const applyEnergyEdits = () => {
+          const deathRatesSection = document.getElementById("death-rates");
+          if (deathRatesSection) deathRatesSection.style.display = "none";
+
+          const safetyButton = document.querySelector('[data-ocid="study.compare.dimension.safety"]');
+          if (safetyButton && safetyButton.textContent !== "Death Rate") {
+            safetyButton.textContent = "Death Rate";
+          }
+
+          const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+          const nodes = [];
+          while (walker.nextNode()) nodes.push(walker.currentNode);
+
+          for (const node of nodes) {
+            const text = node.nodeValue;
+            if (!text) continue;
+            const trimmed = text.trim();
+            if (trimmed === "Safety") {
+              node.nodeValue = text.replace("Safety", "Death Rate");
+            } else if (trimmed === "07 · Nuclear Waste") {
+              node.nodeValue = text.replace("07 · Nuclear Waste", "06 · Nuclear Waste");
+            } else if (text.includes("Fuel, device count, CO₂, land, cost, and safety are shown side by side")) {
+              node.nodeValue = text.replace("Fuel, device count, CO₂, land, cost, and safety are shown side by side", "Fuel, device count, CO₂, land, cost, and death rate are shown side by side");
+            } else if (text.includes("scales across fuel, devices, CO₂, land, cost, and safety.")) {
+              node.nodeValue = text.replace("scales across fuel, devices, CO₂, land, cost, and safety.", "scales across fuel, devices, CO₂, land, cost, and death rate.");
+            }
+          }
+        };
+
+        const observer = new MutationObserver(applyEnergyEdits);
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+        window.addEventListener("DOMContentLoaded", applyEnergyEdits);
+        window.addEventListener("hashchange", () => setTimeout(applyEnergyEdits, 0));
+        setTimeout(applyEnergyEdits, 0);
+      })();
+    </script>
   </body>
 </html>
